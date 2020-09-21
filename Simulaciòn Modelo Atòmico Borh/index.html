@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="./index.css">
+
+    </head>
+    <body>
+    <h2 id="mainH" class="text-center">Modelo Atomico de Bohr</h2>
+    
+        <svg id="mySVG" width="210" height="200">
+        
+        
+        <defs>
+    <filter id="shadow" x="0" y="0" width="200%" height="200%">
+      <feDropShadow dx="40" dy="40" stdDeviation="35" flood-color="white" flood-opacity="1" />
+    </filter>
+  </defs>
+        
+        
+        <!--Orbit-->
+<path id="Spiral" stroke-width="1" fill="none"  stroke="white" d="M 100, 100 m -75, 0
+                 a 75,75 0 1,0 150,0
+                 a 75,75 0 1,0 -150,0
+                 "></path>
+                 
+                 
+                 
+                 <!--Electron  -->
+  <circle  class ='electron'cx="1" cy="1" r="4" fill="white">
+  
+
+    <!-- Define the motion path animation -->
+        <animateMotion dur="2s" repeatCount="indefinite">
+              <mpath xlink:href="#Spiral"/>
+        </animateMotion>
+  </circle>
+  
+  
+  <!-- Nucleus  -->
+  <circle cx="100" cy="100" r="20" fill="white" style="opacity: 0.5;"/>
+  <text fill="white" x="95" y="105">+</text>
+  
+  
+  <!-- Atom Name  -->
+ <text fill="white" x="10" y="195" style="font-size: 10px">
+             Atomo: Hidrogeno
+ </text>
+ 
+ 
+ 
+</svg>
+<button class="btn">Iniciar</button>
+<header style="margin-top: auto;">
+    <h1>Univeridad Autonoma del Caribe </h1>
+    <h2>Facultad ingenieria de sistemas</h2>
+    <h2>Munir Naizir Fontalvo</h2>
+    <h2>Kevin Andres Benitez Lagares</h2>
+</header>
+<script>
+    $(".electron").hide();
+    $(".btn").click(function(){
+        $(".electron").show()
+        
+    });
+</script>
+    </body>
+</html>
